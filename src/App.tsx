@@ -38,6 +38,35 @@ function App() {
 
   return (
     <div className="App">
+      <div className="custom-titlebar">
+  {/* Empty draggable area — takes all space except buttons */}
+  <div className="titlebar-drag"></div>
+
+  {/* Window control buttons on the top-right */}
+  <div className="titlebar-controls">
+    <button 
+      onClick={() => window.electronAPI.minimize()} 
+      className="control-btn minimize"
+      title="Minimize"
+    >
+      —
+    </button>
+    <button 
+      onClick={() => window.electronAPI.toggleMaximize()} 
+      className="control-btn maximize"
+      title="Maximize/Restore"
+    >
+      □
+    </button>
+    <button 
+      onClick={() => window.electronAPI.close()} 
+      className="control-btn close"
+      title="Close"
+    >
+      ✕
+    </button>
+  </div>
+</div>
       <header className="App-header">
         <h1>UGhhh.... Work To Be Done</h1>
         <form className="todo-form" onSubmit={addTodo} aria-label="Add task">
